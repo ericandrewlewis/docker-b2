@@ -13,7 +13,7 @@
 # $blogfilename is the name of the default file for your blog
 # $blogname is the name of your blog
 
-$siteurl = 'http://dockerhost/zerodotx';
+$siteurl = 'http://dockerhost';
 $blogfilename = 'index.php';
 $blogname = "my weblog";
 $blogdescription = "babblings !";
