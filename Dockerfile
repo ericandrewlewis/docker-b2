@@ -47,7 +47,7 @@ ENV B2_SITEURL='http://dockerhost' B2_PATH_SERVER='http://dockerhost' \
     B2_DBUSERNAME='root' B2_DBPASSWORD='' B2_FILEUPLOAD_REALPATH='/usr/local/apache/htdocs/images' \
     B2_FILEUPLOAD_URL='http://dockerhost/images'
 
-RUN mkdir /usr/local/apache/htdocs/images
+RUN mkdir /usr/local/apache/htdocs/images && chown -R nobody:nobody /usr/local/apache/htdocs/images
 
 ADD php.ini /usr/local/lib/php.ini
 
