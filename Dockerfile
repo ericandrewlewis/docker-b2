@@ -44,7 +44,12 @@ ADD b2config.php /usr/local/apache/htdocs/b2config.php
 
 ENV B2_SITEURL='http://dockerhost' B2_PATH_SERVER='http://dockerhost' \
     B2_ADMIN_EMAIL='admin@example.com' B2_DBNAME='b2' B2_DBHOST='127.0.0.1' \
-    B2_DBUSERNAME='root' B2_DBPASSWORD=''
+    B2_DBUSERNAME='root' B2_DBPASSWORD='' B2_FILEUPLOAD_REALPATH='/usr/local/apache/htdocs/images' \
+    B2_FILEUPLOAD_URL='http://dockerhost/images'
+
+RUN mkdir /usr/local/apache/htdocs/images
+
+ADD php.ini /usr/local/lib/php.ini
 
 ADD start-b2.sh /usr/local/bin/start-b2
 

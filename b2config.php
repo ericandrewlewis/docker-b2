@@ -105,17 +105,17 @@ $use_smartquotes = 0;
 
 
 # set this to 0 to disable file upload, or 1 to enable it
-$use_fileupload = 0;
+$use_fileupload = 1;
 
 # enter the real path of the directory where you'll upload the pictures
 #   if you're unsure about what your real path is, please ask your host's support staff
 #   note that the  directory must be writable by the webserver (ChMod 766)
 #   note for windows-servers users: use forwardslashes instead of backslashes
 #$fileupload_realpath = '/home/your/site/b2/images';
-$fileupload_realpath = '/home/example/public_html/images';
+$fileupload_realpath = getenv( 'B2_FILEUPLOAD_REALPATH' );
 
 # enter the URL of that directory (it's used to generate the links to the pictures)
-$fileupload_url = 'http://example.com/images';
+$fileupload_url = getenv( 'B2_FILEUPLOAD_URL' );
 
 # accepted file types, you can add to that list if you want
 #   note: add a space before and after each file type
@@ -124,7 +124,7 @@ $fileupload_allowedtypes = ' jpg gif png ';
 
 # by default, most servers limit the size of uploads to 2048 KB
 #   if you want to set it to a lower value, here it is (you cannot set a higher value)
-$fileupload_maxk = '96';
+$fileupload_maxk = '8192';
 
 # you may not want all users to upload pictures/files, so you can set a minimum level for this
 $fileupload_minlevel = '1';
