@@ -42,6 +42,10 @@ RUN cd /usr/local/src && \
 
 ADD b2config.php /usr/local/apache/htdocs/b2config.php
 
+ENV B2_SITEURL='http://dockerhost' B2_PATH_SERVER='http://dockerhost' \
+    B2_ADMIN_EMAIL='admin@example.com' B2_DBNAME='b2' B2_DBHOST='127.0.0.1' \
+    B2_DBUSERNAME='root' B2_DBPASSWORD=''
+
 ADD start-b2.sh /usr/local/bin/start-b2
 
 CMD ["start-b2"]

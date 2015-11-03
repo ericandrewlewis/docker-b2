@@ -13,7 +13,7 @@
 # $blogfilename is the name of the default file for your blog
 # $blogname is the name of your blog
 
-$siteurl = 'http://dockerhost';
+$siteurl = getenv( 'B2_SITEURL' );
 $blogfilename = 'index.php';
 $blogname = "my weblog";
 $blogdescription = "babblings !";
@@ -32,11 +32,11 @@ $use_cafelogping = 0;    # set this to 1 if you do have a Cafelog ID
 # $pathserver is where you have uploaded b2: for example, 'http://mydomain.com' (no ending slash !)
 #   by default b2 is set to run in the folder your blog resides, same as $siteurl
 
-$pathserver = 'http://example.com';
+$pathserver = getenv( 'B2_PATH_SERVER' );
 
 
 # your email (obvious uh ?)
-$admin_email = 'you@example.com';
+$admin_email = getenv( 'B2_ADMIN_EMAIL' );
 
 
 # set this to 0 or 1, whether you want new users to be able to post entries once they registered
@@ -55,10 +55,10 @@ $start_of_week = 1;
 // ** MySQL settings **
 
 # fill with your database details
-$dbname = 'b2';			// the name of the database
-$dbhost = '127.0.0.1';		// 99% chances you won't need to change this value
-$dbusername = 'root';			// your MySQL username
-$dbpassword = '';		// ...and password
+$dbname = getenv( 'B2_DBNAME' );			// the name of the database
+$dbhost = getenv( 'B2_DBHOST' );		// 99% chances you won't need to change this value
+$dbusername = getenv( 'B2_DBUSERNAME' );			// your MySQL username
+$dbpassword = getenv( 'B2_DBPASSWORD' );		// ...and password
 
 # database tables' names (change them if you want to have multiple b2's in a single database)
 $tableposts = 'b2posts';
